@@ -27,8 +27,8 @@
 define( 'DB_NAME', 'wordpress');
 define( 'DB_USER', 'wordpress');
 define( 'DB_PASSWORD', 'risa1018');
-define( 'DB_HOST', 'db:3306');
-define( 'DB_CHARSET', 'utf8mb4');
+define( 'DB_HOST', 'db');
+define( 'DB_CHARSET', 'utf8');
 define( 'DB_COLLATE', '');
 
 define( 'AUTH_KEY',         'd04953bd29e7153c13728789debfc5bdf2b97c9a');

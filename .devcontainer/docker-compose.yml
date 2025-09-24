@@ -1,15 +1,14 @@
 services:
   db:
-    image: mysql:5.7
+    image: postgres:17.6
     environment:
-      MYSQL_ROOT_PASSWORD: risa1018
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: risa1018
+      POSTGRES_USER: wordpress
+      POSTGRES_PASSWORD: risa1018
+      POSTGRES_DB: wordpress
     ports:
-      - "9030:3306"
+      - "5432:5432"
     volumes:
-      - mysqldb-data:/var/lib/mysql
+      - postgres-data:/var/lib/postgresql/data
 
   app:
     depends_on:
@@ -28,4 +27,4 @@ services:
       - "./..:/workspace"
 
 volumes:
-  mysqldb-data:
+  postgres-data:

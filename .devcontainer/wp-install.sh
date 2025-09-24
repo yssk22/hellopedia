@@ -83,3 +83,7 @@ if ! wp core is-installed 2>/dev/null; then
                 --skip-email 
 fi
 
+# run wp-setup.sh under ../wordpress directory
+
+/workspaces/hellopedia/wordpress/wp-setup.sh
+
