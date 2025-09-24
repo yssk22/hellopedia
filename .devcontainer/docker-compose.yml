@@ -1,0 +1,31 @@
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: risa1018
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: risa1018
+    ports:
+      - "9030:3306"
+    volumes:
+      - mysqldb-data:/var/lib/mysql
+
+  app:
+    depends_on:
+      - db
+    build:
+      context: .
+      args:
+        USER_UID: 1000
+        WP_PATH: /workspaces/hellopedia/wp
+    environment:
+      VSCODE_WORKSPACE: /workspaces/hellopedia
+    ports:
+      - "8080:8080"
+      - "80:80"
+    volumes:
+      - "./..:/workspace"
+
+volumes:
+  mysqldb-data:
